@@ -26,10 +26,10 @@ jobs:
       run: echo "TAG=${GITHUB_SHA::7}" >> $GITHUB_ENV
 
     - name: Build Docker image with commit SHA tag
-      run: docker build -t InsiaFarhan/weather-cli-app:${TAG} .
+      run: docker build -t insiafarhan/weather-cli-app:${TAG} .
 
     - name: Test Docker image
-      run: docker run InsiaFarhan/weather-cli-app:${TAG} Perth
+      run: docker run insiafarhan/weather-cli-app:${TAG} Perth
 
     - name: Push Docker image
-      run: docker push InsiaFarhan/weather-cli-app:${TAG}
+      run: docker push insiafarhan/weather-cli-app:${TAG}
